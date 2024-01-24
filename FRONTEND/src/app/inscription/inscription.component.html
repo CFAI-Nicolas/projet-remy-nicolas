@@ -1,0 +1,72 @@
+<div class="container mt-5">
+  <h2>Inscription</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="inscriptionForm">
+
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" class="form-control" id="nom" formControlName="nom">
+      <div *ngIf="hasError('nom', 'required')" class="text-danger">Le nom est requis.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="prenom">Prénom</label>
+      <input type="text" class="form-control" id="prenom" formControlName="prenom">
+      <div *ngIf="hasError('prenom', 'required')" class="text-danger">Le prénom est requis.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="adresse">Adresse</label>
+      <input type="text" class="form-control" id="adresse" formControlName="adresse">
+      <div *ngIf="hasError('adresse', 'required')" class="text-danger">L'adresse est requis.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="codepostal">Code Postal</label>
+      <input type="text" class="form-control" id="codepostal" formControlName="codepostal">
+      <div *ngIf="hasError('codepostal', 'required')" class="text-danger">Le codepostal est requis.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="ville">Ville</label>
+      <input type="text" class="form-control" id="ville" formControlName="ville">
+      <div *ngIf="hasError('ville', 'required')" class="text-danger">La ville est requis.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Adresse E-mail</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+      <div *ngIf="hasError('email', 'required')" class="text-danger">L'adresse e-mail est requise.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="sexe">Sexe</label>
+      <select class="form-control" id="sexe" formControlName="sexe">
+        <option value="H">homme</option>
+        <option value="F">Femme</option>
+        <option value="A">Non-binaire</option>
+      </select>
+      <div *ngIf="hasError('sexe', 'required')" class="text-danger">Le sexe est requise.</div>
+
+    </div>
+    
+    <div class="form-group">
+      <label for="login">Nom d'utilisateur</label>
+      <input type="text" class="form-control" id="login" formControlName="login">
+      <div *ngIf="hasError('login', 'required')" class="text-danger">Le nom d'utilisateur est requis.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" class="form-control" id="password" formControlName="password">
+      <div *ngIf="hasError('password', 'required')" class="text-danger">Le mot de passe est requis.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="telephone">Téléphone</label>
+      <input type="tel" class="form-control" id="telephone" formControlName="telephone">
+      <div *ngIf="hasError('telephone', 'required')" class="text-danger">Le telephone est requis.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!inscriptionForm.valid">S'inscrire</button>
+  </form>
+</div>
